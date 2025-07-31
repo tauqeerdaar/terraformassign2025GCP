@@ -50,7 +50,7 @@ resource "google_sql_database_instance" "instance" {
     edition = "ENTERPRISE"
   }
 
-  deletion_protection = true
+  deletion_protection = false
 }
 
 #resource "google_sql_database" "main_database" {
