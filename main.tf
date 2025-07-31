@@ -84,7 +84,6 @@ resource "random_password" "password" {
 resource "google_sql_user" "main_user" {
   name     = var.db_username
   instance = google_sql_database_instance.instance.name
-  host     = "%" # Or a specific IP address/CIDR range
   password = random_password.password.result
   depends_on = [ random_password.password,google_sql_database_instance.instance, ]
 }
